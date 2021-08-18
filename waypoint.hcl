@@ -20,6 +20,7 @@ app "go" {
       use "docker" {
         image = var.image
         tag = var.tag
+        insecure = true
       }
     }
   }
