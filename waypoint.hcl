@@ -1,7 +1,7 @@
 project = "go"
 
 variable "image" {
-  default     = "host.docker.internal:5000/go"
+  default     = "localhost:5000/go"
   type        = string
   description = "Image name for the built image in the Docker registry."
 }
