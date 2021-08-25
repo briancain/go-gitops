@@ -47,10 +47,8 @@ app "go" {
 
   release {
     use "kubernetes" {
-      use "kubernetes" {
-        load_balancer = true
-        port          = 3000
-      }
+      load_balancer = true
+      port          = 3000
     }
   }
 }
