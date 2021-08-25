@@ -1,7 +1,7 @@
 project = "go-gitops"
 
 variable "image" {
-  default     = "192.168.0.158:5000/go"
+  default     = "quay.io/bcain/go"
   type        = string
   description = "Image name for the built image in the Docker registry."
 }
@@ -12,6 +12,18 @@ variable "tag" {
   description = "Image tag for the image"
 }
 
+variable "registry_username" {
+  default     = ""
+  type        = string
+  description = "username for container registry"
+}
+
+variable "registry_password" {
+  default     = ""
+  type        = string
+  description = "password for registry" // don't hack me plz
+}
+
 app "go" {
   build {
     use "pack" {}
@@ -20,7 +32,9 @@ app "go" {
       use "docker" {
         image    = var.image
         tag      = var.tag
-        insecure = true
+        username = var.registry_username
+        password = var.registry_password
+        local    = false
       }
     }
   }
