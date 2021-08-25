@@ -1,4 +1,4 @@
-module github.com/evanphx/go-gitops
+module github.com/briancain/go-gitops
 
-// +heroku goVersion go1.15
-go 1.15
+// +heroku goVersion go1.17
+go 1.17
