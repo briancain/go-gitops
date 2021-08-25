@@ -1,4 +1,4 @@
-project = "go"
+project = "go-gitops"
 
 variable "image" {
   default     = "192.168.0.158:5000/go"
