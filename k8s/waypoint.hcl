@@ -41,7 +41,8 @@ app "go" {
 
   deploy {
     use "kubernetes" {
-      probe_path = "/"
+      probe_path   = "/"
+      image_secret = "regcred"
     }
   }
 
