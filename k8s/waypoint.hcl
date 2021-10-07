@@ -1,7 +1,7 @@
 project = "go-gitops"
 
 variable "image" {
-  default     = "quay.io/bcain/go"
+  default     = "bcain.jfrog.io/default-docker-virtual/go"
   type        = string
   description = "Image name for the built image in the Docker registry."
 }
