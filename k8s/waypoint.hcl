@@ -24,6 +24,12 @@ variable "registry_password" {
   description = "password for registry" // don't hack me plz
 }
 
+variable "regcred_secret" {
+  default     = "regcred"
+  type        = string
+  description = "The existing secret name inside Kubernetes for authenticating to the container registry"
+}
+
 app "go" {
   build {
     use "pack" {}
@@ -42,7 +48,7 @@ app "go" {
   deploy {
     use "kubernetes" {
       probe_path   = "/"
-      image_secret = "regcred"
+      image_secret = var.regcred_secret
     }
   }
 
