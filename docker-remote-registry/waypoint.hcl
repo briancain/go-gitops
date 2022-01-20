@@ -1,7 +1,7 @@
 project = "go-gitops"
 
 variable "image" {
-  default     = "quay.io/bcain/go"
+  default     = "team-waypoint-dev-docker-local.artifactory.hashicorp.engineering/go"
   type        = string
   description = "Image name for the built image in the Docker registry."
 }

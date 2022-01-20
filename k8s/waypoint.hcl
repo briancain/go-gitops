@@ -3,7 +3,6 @@ project = "go-gitops-0"
 variable "image" {
   # free tier, old container registry
   #default     = "bcain.jfrog.io/default-docker-virtual/go"
-  #default     = "docker.artifactory.hashicorp.engineering/team-waypoint-dev-docker-local/go"
   default     = "team-waypoint-dev-docker-local.artifactory.hashicorp.engineering/go"
   type        = string
   description = "Image name for the built image in the Docker registry."
