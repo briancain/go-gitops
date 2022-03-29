@@ -9,23 +9,25 @@ variable "image" {
 }
 
 variable "tag" {
-  #default     = "latest"
-  default = dynamic("kubernetes", {
-    name = "my-tag"
-    key  = "tag"
-  })
+  default     = "latest"
   type        = string
   description = "Image tag for the image"
 }
 
 variable "registry_username" {
-  default     = ""
+  default = dynamic("vault", {
+    path = "config/data/secret/registry"
+    key  = "data/registry_username"
+  })
   type        = string
   description = "username for container registry"
 }
 
 variable "registry_password" {
-  default     = ""
+  default = dynamic("vault", {
+    path = "config/data/secret/registry"
+    key  = "data/registry_password"
+  })
   type        = string
   description = "password for registry" // don't hack me plz
 }
