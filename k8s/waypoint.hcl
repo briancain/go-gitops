@@ -9,7 +9,11 @@ variable "image" {
 }
 
 variable "tag" {
-  default     = "latest"
+  #default     = "latest"
+  default = dynamic("kubernetes", {
+    name = "my-tag"
+    key  = "tag"
+  })
   type        = string
   description = "Image tag for the image"
 }
