@@ -20,7 +20,7 @@ variable "registry_username" {
     key  = "data/registry_username"
   })
   type        = string
-  //sensitive   = true
+  sensitive   = true
   description = "username for container registry"
 }
 
@@ -30,7 +30,7 @@ variable "registry_password" {
     key  = "data/registry_password"
   })
   type        = string
-  //sensitive   = true
+  sensitive   = true
   description = "password for registry" // don't hack me plz
 }
 
