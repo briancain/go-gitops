@@ -46,6 +46,7 @@ runner {
   data_source "git" {
     url  = "https://github.com/briancain/go-gitops.git"
     path = "k8s"
+    ref  = config.DATA_REF
   }
 }
 
