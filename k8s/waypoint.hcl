@@ -46,6 +46,16 @@ config {
       DATA_REF = "HEAD"
     }
   }
+  workspace "prod" {
+    internal = {
+      DATA_REF = "prod"
+    }
+  }
+  workspace "stage" {
+    internal = {
+      DATA_REF = "stage"
+    }
+  }
 }
 
 runner {
