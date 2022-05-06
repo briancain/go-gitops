@@ -41,8 +41,10 @@ variable "regcred_secret" {
 }
 
 config {
-  internal = {
-    DATA_REF = "HEAD"
+  workspace "default" {
+    internal = {
+      DATA_REF = "HEAD"
+    }
   }
 }
 
