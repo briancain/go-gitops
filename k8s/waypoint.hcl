@@ -40,6 +40,15 @@ variable "regcred_secret" {
   description = "The existing secret name inside Kubernetes for authenticating to the container registry"
 }
 
+runner {
+  enabled = true
+
+  data_source "git" {
+    url  = "https://github.com/briancain/go-gitops.git"
+    path = "k8s"
+  }
+}
+
 app "go" {
   build {
     use "pack" {}
