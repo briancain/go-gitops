@@ -40,13 +40,19 @@ variable "regcred_secret" {
   description = "The existing secret name inside Kubernetes for authenticating to the container registry"
 }
 
+config {
+  internal = {
+    DATA_REF = "HEAD"
+  }
+}
+
 runner {
   enabled = true
 
   data_source "git" {
     url  = "https://github.com/briancain/go-gitops.git"
     path = "k8s"
-    ref  = config.DATA_REF
+    ref  = config.internal.DATA_REF
   }
 }
 
