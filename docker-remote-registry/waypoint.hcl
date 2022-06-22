@@ -1,18 +1,5 @@
 project = "go-gitops-1"
 
-pipeline "mario" {
-  step "superstar" {
-    use "exec" {
-      command = ["echo", "hi"]
-    }
-  }
-  step "mushroom" {
-    use "exec" {
-      command = ["echo", "bye"]
-    }
-  }
-}
-
 variable "image" {
   default     = "team-waypoint-dev-docker-local.artifactory.hashicorp.engineering/go"
   type        = string
